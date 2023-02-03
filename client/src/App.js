@@ -24,7 +24,6 @@ function App() {
   useEffect(() => {
     getTasks().then((data) => {
       setTodoList(data)
-      console.log(data)
     });
   }, []);
 
@@ -37,17 +36,12 @@ function App() {
     })
   }
 
-  const update_task = (props) => {
-    const id_to_delete = props.target.id
-    console.log(props.target.id)
-  }
-
   return (
     <div className="App">
       <h1>TODO APP</h1>
       <textarea id="input_field" rows="3" cols="50" value={input} onChange={textChanged}></textarea>
       <br></br><button id="add_button" onClick={add_task}>Add task</button><br></br><br></br>
-      <div>{todoList.map(item => <div key={item.id}>{item.item} <button id={item.id} onClick={update_task}>update</button> <button id={item.id} onClick={delete_task}>delete</button></div>)} </div>
+      <div>{todoList.map(item => <div key={item.id}>{item.item} <button id={item.id} onClick={delete_task}>delete</button></div>)} </div>
     </div>
   );
 }

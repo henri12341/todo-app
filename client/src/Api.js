@@ -8,7 +8,6 @@ export const getTasks = async () => {
       }
     })
 
-    console.log(response);
     const data = await response.json();
     return data
 
@@ -33,7 +32,6 @@ export const createTask = async (text = null) => {
     )
 
     const data = await response.json();
-    console.log(data)
 
     return data;
   }
@@ -58,7 +56,6 @@ export const deleteTask= async (id) => {
     })
 
     const data = await response.json();
-    console.log(data);
     return data
 
   }
