@@ -37,7 +37,7 @@ app.delete("/tasks", async (req,res,next) => {
 app.post("/tasks", async (req,res,next) => {
     const {task} = req.body
     db.exec(`INSERT INTO tasks (item) VALUES ('${task}')`)
-    res.status(201).json({newTask: task})
+    res.json("success")
 })
 
 app.patch("/tasks", async (req,res,next) => {
